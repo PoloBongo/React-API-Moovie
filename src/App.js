@@ -1,23 +1,14 @@
-import logo from './logo.svg';
-import './App.css';
+import axios from "axios";
+import "./App.css";
 
 function App() {
+  axios.get(
+    `https://api.themoviedb.org/3/movie/top_rated?language=fr-FR&api_key${process.env.REACT_APP_MA_CLEF}`
+  );
+
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      <header className="App-header">{process.env.REACT_APP_MA_CLEF}</header>
     </div>
   );
 }

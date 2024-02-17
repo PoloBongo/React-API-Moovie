@@ -7,32 +7,113 @@
   pointer-events: none;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
-}
-
 .App-header {
   background-color: #282c34;
-  min-height: 100vh;
+  padding: 5%;
+}
+
+.category-container {
+  display: flex;
+  justify-content: space-between;
+}
+
+/* Catégorie Action */
+.category-action {
+  width: 30%;
+  text-align: left;
+}
+
+/* Catégorie Aventure */
+.category-aventure {
+  width: 30%;
+  margin: 0 auto; /* Center align */
+}
+
+/* Catégorie Animation */
+.category-animation {
+  width: 30%;
+  text-align: right;
+}
+
+button {
+  position: relative;
+  background-color: #040608;
+  color: rgb(20, 187, 48);
+  padding: 3px;
+  top: 3px;
+  left: 3px;
+}
+
+.pos-url {
+  position: relative;
+  top: 4px;
+  left: 3px;
+}
+
+.size-img {
   display: flex;
   flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+  width: 30%;
+  cursor: pointer;
+  transition-duration: 2s;
 }
 
-.App-link {
-  color: #61dafb;
+/* fin css pour la catégorie Action */
+
+/* debut de css pour la categorie Aventure */
+.size-img-category {
+  cursor: pointer;
+  transition-duration: 2s;
+}
+/* Animation hover + translate du paragraphe */
+.size-img-category .card .content {
+  padding: 2px;
+  transition: 0.8s all ease;
+  color: rgb(238, 234, 234);
+  transform: translateX(200px);
+  opacity: 0;
+}
+.size-img-category:hover .card:hover .content {
+  transform: translateY(-30px);
+  opacity: 1;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
+.size-img-category:hover .card:hover .content .fa-star {
+  color: #f7f406;
+}
+
+@media (max-width: 1500px) {
+  .size-img-category .card .content {
+    display: none;
+    opacity: 0;
   }
-  to {
-    transform: rotate(360deg);
+  .size-img-category:hover .card:hover .content {
+    display: none;
   }
+}
+
+/* fin css pour la catégorie Animation */
+
+/* page popular_moovie */
+.size-img:hover {
+  display: flex;
+  flex-direction: column;
+  width: 45%;
+}
+
+a {
+  display: flex;
+  flex-direction: column;
+}
+
+.size-img .card .content {
+  padding: 2px;
+  transition: 0.8s all ease;
+  color: rgb(238, 234, 234);
+  transform: translateX(200px);
+  opacity: 0;
+}
+.size-img:hover .card:hover .content {
+  transform: translateX(0px);
+  opacity: 1;
 }

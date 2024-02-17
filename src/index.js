@@ -1,13 +1,46 @@
-import React from 'react';
-import ReactDOM from 'react-dom/client';
-import './index.css';
-import App from './App';
-import reportWebVitals from './reportWebVitals';
+import React from "react";
+import ReactDOM from "react-dom/client";
+import Home from "./pages/Home";
+import Moovie_Popular from "./pages/Moovie_Popular";
+import App from "./App";
+import Moovie from "./pages/Moovie";
+import Test from "./pages/Test";
+import Moovie_Category_Animation from "./pages/Moovie_Category_Animation";
+import Moovie_Category_Action from "./pages/Moovie_Category_Action";
+import reportWebVitals from "./reportWebVitals";
+import "./index.css";
+import { createBrowserRouter, RouterProvider, Route } from "react-router-dom";
+const router = createBrowserRouter([
+  {
+    path: "/",
+    element: <Home />,
+  },
+  {
+    path: "/popular_moovie",
+    element: <Moovie_Popular />,
+  },
+  {
+    path: "/moovie/:id",
+    element: <Moovie />,
+  },
+  {
+    path: "/moovie_catergory_action/:id",
+    element: <Moovie_Category_Action />,
+  },
+  {
+    path: "/moovie_category_animation/:id",
+    element: <Moovie_Category_Animation />,
+  },
+  {
+    path: "/try/",
+    element: <Test />,
+  },
+]);
 
-const root = ReactDOM.createRoot(document.getElementById('root'));
+const root = ReactDOM.createRoot(document.getElementById("root"));
 root.render(
   <React.StrictMode>
-    <App />
+    <RouterProvider router={router} />
   </React.StrictMode>
 );
 
